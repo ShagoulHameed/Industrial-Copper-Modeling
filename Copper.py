@@ -3,6 +3,25 @@ import joblib
 import numpy as np
 from streamlit_option_menu import option_menu
 
+# Set page configuration
+st.set_page_config(layout="wide")
+
+# Custom CSS for styling
+st.markdown("""
+    <style>
+        .sidebar .sidebar-content {
+            background-color: #f0f2f6;
+        }
+        .sidebar .sidebar-content .sidebar-header {
+            font-size: 1.2em;
+            color: #2E7D32;
+        }
+        .sidebar .sidebar-content .nav-link {
+            font-size: 1.1em;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Functions
 def predict_selling_price(ctry, status, itmtp, aplcn, wth, prdrf, qtlg, cstlg, tknslg, itmdt, itmmn, itmyr, deldtdy, deldtmn, deldtyr):
     # Change the datatypes "string" to "int"
@@ -22,13 +41,37 @@ def predict_selling_price(ctry, status, itmtp, aplcn, wth, prdrf, qtlg, cstlg, t
 
     return y_pred[0]
 
-st.set_page_config(layout="wide")
 st.title(":blue[**INDUSTRIAL COPPER MODELING**]")
 
 with st.sidebar:
-    option = option_menu('Vignesh', options=["PREDICT SELLING PRICE", "PREDICT STATUS"])
+    st.image("C:/Users/HameedS/OneDrive - Kantar/Desktop/Pythonmy/maxresdefault.jpg", use_column_width=True)
+    option = option_menu('Navigation', options=["HOME", "PREDICT SELLING PRICE", "PREDICT STATUS"])
 
-if option == "PREDICT STATUS":
+if option == "HOME":
+     st.header("Project Overview")
+
+     st.write("""
+        The Industrial Copper Modeling project aims to optimize pricing and lead classification within the copper industry. The project addresses common issues such as data skewness and noise, which can compromise manual prediction accuracy. By leveraging machine learning techniques, this project offers a more efficient and accurate solution.
+
+        **Key Features of the Model:**
+        - **Data Preprocessing:** Includes data normalization, feature scaling, and outlier detection to ensure clean and usable data.
+        - **Regression Model for Pricing:** A machine learning regression model predicts the continuous variable 'Selling_Price' by analyzing historical data and current trends.
+        - **Classification Model for Lead Status:** A lead classification model evaluates and classifies leads into 'WON' or 'LOST' categories, improving decision-making for sales strategies.
+        - **User Interface:** A Streamlit-based interface allows users to input relevant data and receive real-time predictions for selling prices and lead status.
+
+        **Steps Involved in the Solution:**
+        1. **Exploring Skewness and Outliers:** Analyze the dataset to identify and address any skewness or outliers that may affect model performance.
+        2. **Data Transformation and Cleaning:** Transform the data into a suitable format and perform necessary cleaning and preprocessing steps to prepare it for modeling.
+        3. **Building the Regression Model:** Develop a regression model to accurately predict selling prices, using advanced machine learning algorithms.
+        4. **Building the Classification Model:** Create a classification model to predict the status (WON/LOST) of leads, aiding in effective sales management.
+        5. **Developing the Streamlit App:** Implement a user-friendly Streamlit application where users can input data and obtain predictions for selling price and lead status.
+
+        This comprehensive approach ensures that the copper industry can make data-driven decisions, optimize pricing strategies, and improve lead conversion rates.
+        """)
+    # Placeholder for an image
+     st.image("C:/Users/HameedS/OneDrive - Kantar/Desktop/Pythonmy/maxresdefault.jpg", caption="Industrial Copper Modeling", use_column_width=True)
+
+elif option == "PREDICT STATUS":
     st.header("PREDICT STATUS (Won / Lose)")
     st.write(" ")
 
@@ -57,16 +100,16 @@ if option == "PREDICT STATUS":
 
     if button:
         status = predict_selling_price(country, item_type, application, width, product_ref, quantity_tons_log,
-                                customer_log, thickness_log, selling_price_log, item_date_day,
-                                item_date_month, item_date_year, delivery_date_day, delivery_date_month,
-                                delivery_date_year)
+                                       customer_log, thickness_log, selling_price_log, item_date_day,
+                                       item_date_month, item_date_year, delivery_date_day, delivery_date_month,
+                                       delivery_date_year)
 
         if status == 1:
             st.write("## :green[**The Status is WON**]")
         else:
             st.write("## :red[**The Status is LOSE**]")
 
-if option == "PREDICT SELLING PRICE":
+elif option == "PREDICT SELLING PRICE":
     st.header("**PREDICT SELLING PRICE**")
     st.write(" ")
 
