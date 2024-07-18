@@ -75,3 +75,6 @@ The solution involves the following steps:
 For any queries, please reach out to Shagoul Hameed at Shagoul04@gmail.com. 
 https://www.linkedin.com/in/shagoul-hameed/
 
+## Project Demo Video
+https://www.linkedin.com/posts/shagoul-hameed_machinelearning-datascience-python-activity-7219675014315352065-eUk9?utm_source=share&utm_medium=member_desktop 
+![image](https://github.com/user-attachments/assets/62dee14e-23be-4a00-b28c-92261afe176d)
