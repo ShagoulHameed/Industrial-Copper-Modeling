@@ -1,4 +1,7 @@
 # Industrial Copper Modeling  
+
+Streamlit Cloud Demo link ::   https://industrial-copper-modeling-juezw8nudqcttw6vgvlqxv.streamlit.app/
+
 ![image](https://github.com/user-attachments/assets/e1ca563e-0031-4901-884e-4537107bf6ab)
 ## Overview
 The Industrial Copper Modeling project addresses the challenges in the copper industry's sales and pricing data. This data often suffers from skewness and noise, affecting the accuracy of manual predictions. This project leverages machine learning techniques to enhance the accuracy and efficiency of predictions.
