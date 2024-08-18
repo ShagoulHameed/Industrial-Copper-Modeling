@@ -44,7 +44,7 @@ def predict_selling_price(ctry, status, itmtp, aplcn, wth, prdrf, qtlg, cstlg, t
 st.title(":blue[**INDUSTRIAL COPPER MODELING**]")
 
 with st.sidebar:
-    st.image("C:/Users/HameedS/OneDrive - Kantar/Desktop/Pythonmy/maxresdefault.jpg", use_column_width=True)
+    st.image("maxresdefault.jpg", use_column_width=True)
     option = option_menu('Navigation', options=["HOME", "PREDICT SELLING PRICE", "PREDICT STATUS"])
 
 if option == "HOME":
@@ -69,7 +69,7 @@ if option == "HOME":
         This comprehensive approach ensures that the copper industry can make data-driven decisions, optimize pricing strategies, and improve lead conversion rates.
         """)
     # Placeholder for an image
-     st.image("C:/Users/HameedS/OneDrive - Kantar/Desktop/Pythonmy/maxresdefault.jpg", caption="Industrial Copper Modeling", use_column_width=True)
+     st.image("maxresdefault.jpg", caption="Industrial Copper Modeling", use_column_width=True)
 
 elif option == "PREDICT STATUS":
     st.header("PREDICT STATUS (Won / Lose)")
